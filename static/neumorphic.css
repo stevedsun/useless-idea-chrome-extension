@@ -41,6 +41,7 @@ footer a {
 .tabs-container {
     max-width: 620px;
     min-width: 420px;
+    cursor: pointer;
     margin: auto;
 }
 
