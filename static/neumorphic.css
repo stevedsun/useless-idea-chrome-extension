@@ -39,7 +39,6 @@ footer a {
 }
 
 .tabs-container {
-    width: 680px;
     max-width: 620px;
     min-width: 420px;
     margin: auto;
@@ -103,7 +102,9 @@ footer a {
 
 .tabcontent {
     padding: 46px;
-    min-height: 288px;
+    width: 620px;
+    height: 420px;
+    /* min-height: 288px; */
     /* display: none; */
     border-radius: 18px;
     background: #f4f4f4;
@@ -137,6 +138,8 @@ footer a {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
+    height: 200px;
+    text-align: justify;
     font-family: 'Noto Serif SC', serif;
 }
 
