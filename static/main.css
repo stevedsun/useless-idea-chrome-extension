@@ -1,0 +1,110 @@
+body {
+    background: #E5E5E5;
+}
+
+.wrapper {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 34px;
+    max-width: 635px;
+    margin: 10px auto;
+}
+
+.show-wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.brand {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 16px;
+}
+
+.inner p {
+    font-weight: 500;
+    color: #333333;
+}
+
+pre {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    color: #333333;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.desc {
+    text-align: center;
+}
+
+.inner h3 {
+    font-weight: 600;
+    color: #000000;
+}
+
+.section {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 5px 30px 5px 30px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+}
+
+.qa {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: justify;
+}
+
+.btn {
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+    padding: 0 5px 0 5px;
+    color: #FFFFFF;
+    background: #3ECF8E;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+footer p {
+    margin: 0;
+}
+
+a {
+    color: #000000;
+}
