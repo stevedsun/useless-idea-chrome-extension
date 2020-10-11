@@ -30,7 +30,7 @@ footer a {
     height: 80vh;
     background-color: #f4f4f4;
     color: #a2a2a2;
-    font-family: "Noto Sans SC", sans-serif;
+    font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
 .darkmode .container {
@@ -137,11 +137,11 @@ footer a {
 
 .tabcontent .idea {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 20px;
     height: 200px;
     text-align: justify;
-    font-family: 'Noto Serif SC', serif;
+    font-family: "SourceHan-S-SC", serif;
 }
 
 .tabcontent .author {
@@ -271,7 +271,7 @@ input:checked+.slider:before {
     background-color: #f4f4f4;
     height: 100vh;
     color: #a2a2a2;
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
 .darkmode .small-screen {
