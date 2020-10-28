@@ -9,6 +9,10 @@ body {
     background-color: #f4f4f4;
 }
 
+.darkmode body {
+    background-color: #1A1B1F;
+}
+
 footer {
     margin-top: 2em;
     margin-left: 1em;
@@ -19,6 +23,10 @@ footer {
     line-height: 20px;
     text-align: center;
     color: #8a8a8a;
+}
+
+.darkmode footer {
+    background-color: #1A1B1F;
 }
 
 footer a {
@@ -162,6 +170,13 @@ footer a {
     font-size: 12px;
     font-weight: 400;
     color: #d4d4d4;
+    text-align: right;
+}
+
+.darkmode .tabcontent .curator {
+    font-size: 12px;
+    font-weight: 400;
+    color: #626262;
     text-align: right;
 }
 

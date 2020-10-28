@@ -3,6 +3,15 @@ var url = "https://q24.io/api/v1/idea";
 function setup() {
   noCanvas();
   wordnik('tabcontent', url);
+  switchDarkMode()
+}
+
+function switchDarkMode() {
+  darkmode = window.matchMedia("(prefers-color-scheme: dark)").matches // match to OS theme
+  if (darkmode) {
+      document.querySelector('html').classList.add('darkmode')
+      document.querySelector('#dark-mode-switch').checked = 'checked'
+  }
 }
 
 
