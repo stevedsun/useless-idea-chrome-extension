@@ -7,24 +7,42 @@ function setup() {
 }
 
 function switchDarkMode() {
-  darkmode = window.matchMedia("(prefers-color-scheme: dark)").matches // match to OS theme
-  if (darkmode) {
-      document.querySelector('html').classList.add('darkmode')
-      document.querySelector('#dark-mode-switch').checked = 'checked'
+  let media = window.matchMedia("(prefers-color-scheme: dark)")
+  if (media.matches) {
+    document.querySelector('html').classList.add('darkmode');
+  }
+
+  let callback = (e) => {
+    let darkmode = e.matches;
+    if (darkmode) {
+      document.querySelector('html').classList.add('darkmode');
+    } else {
+      document.querySelector('html').classList.remove('darkmode');
+    }
+  }
+
+  if (typeof media.addEventListener === 'function') {
+    media.addEventListener('change', callback);
+  } else if (typeof media.addListener === 'function') {
+    media.addListener(callback);
   }
 }
-
 
 function wordnik(where, url) {
   loadJSON(url, wordLoaded);
   function wordLoaded(data) {
-    var content = select('#tabcontent')
-    var idea_content = data.idea.replace("「", "『").replace("」", "』");
-    var tag = createP("🏷️ " + data.tag);
-    var idea = createP("「" + idea_content + "」");
-    var author = createP(data.author);
-    var intro = createP(data.intro);
-    var curator = createP("本内容由 " + data.curator + " 提供");
+    let content = select('#tabcontent')
+    let tag;
+    if (data.tag) {
+      tag = createP("🏷️ " + data.tag);
+    } else {
+      tag = createP("️");
+    }
+    let idea = createP(data.idea);
+    let author = createP(data.author);
+    let intro = createP(data.intro);
+    let curator = createP("本内容由 " + data.curator + " 提供");
+
     tag.class('tag')
     idea.class('idea')
     author.class('author')

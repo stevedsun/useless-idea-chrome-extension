@@ -14,10 +14,7 @@ body {
 }
 
 footer {
-    margin-top: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
+    margin-top: 5em;
     font-size: 12px;
     font-weight: 300;
     line-height: 20px;
@@ -31,6 +28,7 @@ footer {
 
 footer a {
     color: #8a8a8a;
+    text-decoration:none;
 }
 
 .container {
@@ -148,8 +146,10 @@ footer a {
     font-weight: 600;
     margin-bottom: 20px;
     height: 200px;
-    text-align: justify;
+    text-align: left;
     font-family: 'Noto Serif SC', serif;
+    text-overflow: ellipsis;
+    overflow: auto;
 }
 
 .tabcontent .author {
