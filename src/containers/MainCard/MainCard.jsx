@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Box, Flex, Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Link, SkeletonText } from '@chakra-ui/react';
 import {
   CopyIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-  InfoIcon,
   LinkIcon,
 } from '@chakra-ui/icons';
 
@@ -14,7 +13,7 @@ class MainCardComponent extends Component {
     idea: '',
     author: '',
     intro: '',
-    curator: ' ',
+    curator: '',
   };
   constructor(props) {
     super(props);
@@ -50,26 +49,36 @@ class MainCardComponent extends Component {
             <ChevronRightIcon />
           </Flex>
           <Flex flexDirection="row" w="50%" justifyContent="flex-end">
-            {/* <DownloadIcon marginRight="10px" /> */}
             <CopyIcon />
           </Flex>
         </Flex>
         <Box w="100%" h="70%" textAlign="left">
-          <Text fontSize="lg" noOfLines={5}>
-            {this.state.idea}
-            <Link marginLeft="10px" href={this.state.url}>
-              <LinkIcon />
-            </Link>
-          </Text>
+          <SkeletonText
+            isLoaded={this.state.idea}
+            noOfLines={3}
+            spacing="4"
+            skeletonHeight="1em"
+          >
+            <Text fontSize="lg" noOfLines={5}>
+              {this.state.idea}
+              <Link href={this.state.url} margin="auto 10px">
+                <LinkIcon></LinkIcon>
+              </Link>
+            </Text>
+          </SkeletonText>
         </Box>
         <Box w="100%" h="7%" textAlign="right">
           <Text fontSize="md">{this.state.author}</Text>
         </Box>
 
         <Box w="100%" marginTop="10px" textAlign="right" alignItems="center">
-          <Text fontSize="xs" color="grey">
+          <Box
+            fontSize="xs"
+            color="grey"
+            display={this.state.curator ? 'block' : 'none'}
+          >
             本内容由 <Text as="u">{this.state.curator}</Text> 提供
-          </Text>
+          </Box>
         </Box>
       </Flex>
     );
