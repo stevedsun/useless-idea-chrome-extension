@@ -93,9 +93,9 @@ class MainCardComponent extends Component {
               color="grey"
               display={this.state.curator ? 'block' : 'none'}
             >
-              本内容由
+              {'本内容由 '}
               <Link href={this.state.curator_link}>{this.state.curator}</Link>
-              提供
+              {' 提供'}
             </Box>
           </Box>
         </Flex>
