@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Box, Flex, Text, Link, SkeletonText } from '@chakra-ui/react';
 import {
-  CopyIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  LinkIcon,
-} from '@chakra-ui/icons';
+  Box,
+  Flex,
+  Text,
+  Link,
+  SkeletonText,
+  TagLabel,
+  Tag,
+} from '@chakra-ui/react';
+import { CopyIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
 class MainCardComponent extends Component {
   state = {
@@ -14,6 +17,8 @@ class MainCardComponent extends Component {
     author: '',
     intro: '',
     curator: '',
+    curator_link: '',
+    collection: '',
   };
   constructor(props) {
     super(props);
@@ -29,6 +34,8 @@ class MainCardComponent extends Component {
       author: data.author,
       intro: data.intro,
       curator: data.curator,
+      curator_link: data.curator_link,
+      collection: data.collection,
     });
   };
 
@@ -60,10 +67,7 @@ class MainCardComponent extends Component {
             skeletonHeight="1em"
           >
             <Text fontSize="lg" noOfLines={5}>
-              {this.state.idea}
-              <Link href={this.state.url} margin="auto 10px">
-                <LinkIcon></LinkIcon>
-              </Link>
+              <Link href={this.state.url}>{this.state.idea}</Link>
             </Text>
           </SkeletonText>
         </Box>
@@ -71,15 +75,30 @@ class MainCardComponent extends Component {
           <Text fontSize="md">{this.state.author}</Text>
         </Box>
 
-        <Box w="100%" marginTop="10px" textAlign="right" alignItems="center">
+        <Flex>
           <Box
-            fontSize="xs"
-            color="grey"
-            display={this.state.curator ? 'block' : 'none'}
+            w="50%"
+            marginTop="10px"
+            textAlign="left"
+            alignItems="center"
+            display={this.state.collection ? 'block' : 'none'}
           >
-            本内容由 <Text as="u">{this.state.curator}</Text> 提供
+            <Tag size={'sm'}>
+              <TagLabel>{this.state.collection}</TagLabel>
+            </Tag>
           </Box>
-        </Box>
+          <Box w="50%" marginTop="10px" textAlign="right" alignItems="center">
+            <Box
+              fontSize="xs"
+              color="grey"
+              display={this.state.curator ? 'block' : 'none'}
+            >
+              本内容由
+              <Link href={this.state.curator_link}>{this.state.curator}</Link>
+              提供
+            </Box>
+          </Box>
+        </Flex>
       </Flex>
     );
   }
