@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "无用主意标签页",
+  "description": "在新标签页展示一个无用的主意",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": ["clipboardWrite"],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["icon-128.png"],
+      "matches": []
+    }
+  ]
+}
