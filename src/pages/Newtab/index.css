@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   text-align: center;
@@ -15,12 +16,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
   color: #333;
-  background: #fff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-rendering: optimizelegibility;
@@ -103,7 +101,8 @@ button,
 input,
 select,
 textarea {
-  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 
 button::-moz-focus-inner,
@@ -298,7 +297,7 @@ b {
 
 .clearfix:before,
 .clearfix:after {
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -345,7 +344,7 @@ b {
 .typo-hr,
 .typo-table,
 blockquote {
-  margin-bottom: 1.2em
+  margin-bottom: 1.2em;
 }
 
 h1,
@@ -354,7 +353,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
   color: #000;
   line-height: 1.35;
@@ -486,7 +486,7 @@ caption {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  content: "・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・";
+  content: '・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・';
 }
 
 /* Responsive images */

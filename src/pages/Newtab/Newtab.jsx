@@ -3,37 +3,36 @@ import {
   Box,
   Flex,
   HStack,
-  useColorMode,
-  Switch,
   IconButton,
   useDisclosure,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import MainCardComponent from '../../containers/MainCard/MainCard';
+import MainCard from '../../containers/MainCard/MainCard';
 import { SettingsIcon } from '@chakra-ui/icons';
-import SettingsComponent from '../../containers/Settings/Settings';
+import Settings from '../../containers/Settings/Settings';
 
 const Newtab = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const bg = useColorModeValue('color1', '_color1');
+  const btnBg = useColorModeValue('color2', '_color2');
+
   return (
-    <Flex flexDirection="column" h="100vh" bg="#e6e7ee">
-      <Flex flexDirection="row" justifyContent="flex-end" h="80px">
+    <Flex flexDirection="column" h="100vh" minW="860px" minH="544px" bg={bg}>
+      <Flex flexDirection="row" justifyContent="flex-end" h="20px">
         <IconButton
-          w="50px"
-          margin="auto 50px"
+          bg={btnBg}
+          borderRadius="50%"
+          margin="20px 50px"
           aria-label="Settings"
           icon={<SettingsIcon />}
           onClick={onOpen}
         />
-        <SettingsComponent
-          isOpen={isOpen}
-          onClose={onClose}
-        ></SettingsComponent>
+        <Settings isOpen={isOpen} onClose={onClose}></Settings>
       </Flex>
       <HStack w="100vw" flex="1" justifyContent="center">
         <Box>
-          <MainCardComponent></MainCardComponent>
+          <MainCard></MainCard>
         </Box>
       </HStack>
     </Flex>

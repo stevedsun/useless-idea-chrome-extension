@@ -39,8 +39,8 @@ var options = {
     newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
     // options: path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
     // popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
-    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
+    // background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
+    // contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
     // devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
     // panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
   },
@@ -151,15 +151,15 @@ var options = {
         },
       ],
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: 'src/assets/img/icon-34.png',
-          to: path.join(__dirname, 'build'),
-          force: true,
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: 'src/assets/img/icon-34.png',
+    //       to: path.join(__dirname, 'build'),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.html'),
       filename: 'newtab.html',
