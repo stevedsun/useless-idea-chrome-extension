@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Flex,
@@ -13,19 +13,19 @@ import {
   PopoverContent,
   PopoverArrow,
   PopoverBody,
-  Popover,
-} from '@chakra-ui/react';
-import { CopyIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+  Popover
+} from '@chakra-ui/react'
+import { CopyIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
 const MainCard = () => {
-  const [state, setState] = useState(() => ({}));
-  const popColor = useColorModeValue('color1', '_color1');
-  const cardColor = useColorModeValue('color3', '_color3');
-  const tagColor = useColorModeValue('color4', '_color4');
+  const [state, setState] = useState(() => ({}))
+  const popColor = useColorModeValue('color1', '_color1')
+  const cardColor = useColorModeValue('color3', '_color3')
+  const tagColor = useColorModeValue('color4', '_color4')
 
   const fetchData = async () => {
-    const response = await fetch('https://q24.io/api/v1/ideas:random_one');
-    const data = await response.json();
+    const response = await fetch('https://q24.io/api/v1/ideas:random_one')
+    const data = await response.json()
     setState({
       idea: data.idea,
       url: data.url,
@@ -33,17 +33,17 @@ const MainCard = () => {
       intro: data.intro,
       curator: data.curator,
       curator_link: data.curator_link,
-      collection: data.collection,
-    });
-  };
+      collection: data.collection
+    })
+  }
 
   const onCopy = () => {
-    navigator.clipboard.writeText(`${state.idea} -- ${state.author}`);
-  };
+    navigator.clipboard.writeText(`${state.idea} -- ${state.author}`)
+  }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   return (
     <Flex
@@ -86,7 +86,7 @@ const MainCard = () => {
           spacing="4"
           skeletonHeight="1.25rem"
         >
-          <Text fontSize="xl" noOfLines={7}>
+          <Text fontSize="xl" fontWeight="medium" noOfLines={7}>
             <Link href={state.url}>{state.idea}</Link>
           </Text>
         </SkeletonText>
@@ -116,7 +116,7 @@ const MainCard = () => {
         </Box>
       </Flex>
     </Flex>
-  );
-};
+  )
+}
 
-export default MainCard;
+export default MainCard

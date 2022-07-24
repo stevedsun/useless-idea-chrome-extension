@@ -4,7 +4,7 @@
 
 # 无用主意新标签页
 
-A new tab extension for Chrome browser, showing random tips.
+A new tab extension for Chrome browser, giving you new ideas.
 
 一个每次打开都随机展示一条灵感的 Chrome 新标签页扩展。
 

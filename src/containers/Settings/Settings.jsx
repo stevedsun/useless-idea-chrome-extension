@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Flex,
   Stack,
@@ -19,32 +19,32 @@ import {
   Link,
   useColorMode,
   useColorModeValue,
-  Checkbox,
-} from '@chakra-ui/react';
-import { useEffect } from 'react';
+  Checkbox
+} from '@chakra-ui/react'
+import { useEffect } from 'react'
 
-const Settings = (props) => {
-  const { colorMode, toggleColorMode, setColorMode } = useColorMode();
-  const bg = useColorModeValue('color1', '_color1');
-  const cardColor = useColorModeValue('color3', '_color3');
-  const tagColor = useColorModeValue('color4', '_color4');
-  const [useSysTheme, setUseSysTheme] = React.useState(true);
+const Settings = props => {
+  const { colorMode, toggleColorMode, setColorMode } = useColorMode()
+  const bg = useColorModeValue('color1', '_color1')
+  const cardColor = useColorModeValue('color3', '_color3')
+  const tagColor = useColorModeValue('color4', '_color4')
+  const [useSysTheme, setUseSysTheme] = React.useState(true)
 
   useEffect(() => {
-    let isSystemTheme = JSON.parse(localStorage.getItem('useSysTheme'));
-    setUseSysTheme(isSystemTheme);
+    let isSystemTheme = JSON.parse(localStorage.getItem('useSysTheme'))
+    setUseSysTheme(isSystemTheme)
     if (isSystemTheme) {
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
-      ).matches;
-      setColorMode(prefersDark ? 'dark' : 'light');
+      ).matches
+      setColorMode(prefersDark ? 'dark' : 'light')
     }
-  }, [setColorMode]);
+  }, [setColorMode])
 
-  const setThemeSystem = (checked) => {
-    localStorage.setItem('useSysTheme', checked);
-    setUseSysTheme(checked);
-  };
+  const setThemeSystem = checked => {
+    localStorage.setItem('useSysTheme', checked)
+    setUseSysTheme(checked)
+  }
 
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -68,13 +68,13 @@ const Settings = (props) => {
                 <Stack direction="row">
                   <Radio value="light">亮</Radio>
                   <Radio value="dark">暗</Radio>
+                  <Checkbox
+                    isChecked={useSysTheme}
+                    onChange={e => setThemeSystem(e.target.checked)}
+                  >
+                    跟随系统
+                  </Checkbox>
                 </Stack>
-                <Checkbox
-                  isChecked={useSysTheme}
-                  onChange={(e) => setThemeSystem(e.target.checked)}
-                >
-                  跟随系统
-                </Checkbox>
               </RadioGroup>
             </Flex>
             {/* <Flex
@@ -115,7 +115,7 @@ const Settings = (props) => {
         <ModalFooter></ModalFooter>
       </ModalContent>
     </Modal>
-  );
-};
+  )
+}
 
-export default Settings;
+export default Settings
