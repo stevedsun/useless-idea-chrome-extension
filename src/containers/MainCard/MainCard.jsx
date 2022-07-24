@@ -86,7 +86,7 @@ const MainCard = () => {
           spacing="4"
           skeletonHeight="1.25rem"
         >
-          <Text fontSize="xl" fontWeight="medium" noOfLines={7}>
+          <Text fontSize="xl" noOfLines={7}>
             <Link href={state.url}>{state.idea}</Link>
           </Text>
         </SkeletonText>

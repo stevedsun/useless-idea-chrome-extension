@@ -1,17 +1,13 @@
-import { extendTheme } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
+import { extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 const styles = {
-  global: (props) => ({
+  global: props => ({
     body: {
-      bg: mode('#FEFBF3', '#2C3333')(props),
-    },
-  }),
-};
-
-const fonts = {
-  //   heading: "'M PLUS Rounded 1c'"
-};
+      bg: mode('#FEFBF3', '#2C3333')(props)
+    }
+  })
+}
 
 const colors = {
   color1: '#FEFBF3',
@@ -21,14 +17,14 @@ const colors = {
   _color1: '#2C3333',
   _color2: '#395B64',
   _color3: '#A5C9CA',
-  _color4: '#E7F6F2',
-};
+  _color4: '#E7F6F2'
+}
 
 const config = {
   initialColorMode: 'system',
-  useSystemColorMode: false,
-};
+  useSystemColorMode: false
+}
 
-const theme = extendTheme({ config, styles, fonts, colors });
+const theme = extendTheme({ config, styles, colors })
 
-export default theme;
+export default theme

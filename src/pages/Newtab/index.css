@@ -9,9 +9,12 @@ body {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica,
+    'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB',
+    'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN',
+    'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti',
+    SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,7 +104,7 @@ button,
 input,
 select,
 textarea {
-  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+  font: 350 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
     Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 
