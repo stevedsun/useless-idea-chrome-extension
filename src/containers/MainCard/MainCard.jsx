@@ -15,7 +15,7 @@ import {
   PopoverBody,
   Popover
 } from '@chakra-ui/react'
-import { CopyIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { CopyIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
 const MainCard = () => {
   const [state, setState] = useState(() => ({}))
@@ -58,6 +58,18 @@ const MainCard = () => {
       <Box h="10%" position="relative">
         {/* <ChevronLeftIcon /> */}
         {/* <ChevronRightIcon /> */}
+        <Link href={state.url}>
+          <IconButton
+            _focus={'none'}
+            // transform="scale(0.8, 0.8)"
+            position="absolute"
+            top="-10px"
+            right="25px"
+            aria-label="link"
+            icon={<ExternalLinkIcon />}
+            variant="unstyled"
+          ></IconButton>
+        </Link>
         <Popover placement="top">
           <PopoverTrigger>
             <IconButton
@@ -87,7 +99,7 @@ const MainCard = () => {
           skeletonHeight="1.25rem"
         >
           <Text fontSize="xl" noOfLines={7}>
-            <Link href={state.url}>{state.idea}</Link>
+            {state.idea}
           </Text>
         </SkeletonText>
       </Box>

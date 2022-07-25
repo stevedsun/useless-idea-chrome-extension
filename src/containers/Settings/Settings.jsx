@@ -22,6 +22,7 @@ import {
   Checkbox
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 const Settings = props => {
   const { colorMode, toggleColorMode, setColorMode } = useColorMode()
@@ -29,6 +30,13 @@ const Settings = props => {
   const cardColor = useColorModeValue('color3', '_color3')
   const tagColor = useColorModeValue('color4', '_color4')
   const [useSysTheme, setUseSysTheme] = React.useState(true)
+  const [collections, setCollections] = React.useState([])
+
+  const fetchCollections = async () => {
+    const response = await fetch('https://q24.io/api/v1/collections')
+    const data = await response.json()
+    setCollections(data)
+  }
 
   useEffect(() => {
     let isSystemTheme = JSON.parse(localStorage.getItem('useSysTheme'))
@@ -39,6 +47,7 @@ const Settings = props => {
       ).matches
       setColorMode(prefersDark ? 'dark' : 'light')
     }
+    fetchCollections()
   }, [setColorMode])
 
   const setThemeSystem = checked => {
@@ -60,49 +69,40 @@ const Settings = props => {
           >
             <Flex alignItems={'center'} justifyContent="space-between" h="40px">
               主题
-              <RadioGroup
-                onChange={toggleColorMode}
-                value={colorMode}
-                isDisabled={useSysTheme}
-              >
-                <Stack direction="row">
-                  <Radio value="light">亮</Radio>
-                  <Radio value="dark">暗</Radio>
-                  <Checkbox
-                    isChecked={useSysTheme}
-                    onChange={e => setThemeSystem(e.target.checked)}
-                  >
-                    跟随系统
-                  </Checkbox>
-                </Stack>
-              </RadioGroup>
+              <Stack direction="row">
+                <RadioGroup
+                  onChange={toggleColorMode}
+                  value={colorMode}
+                  isDisabled={useSysTheme}
+                >
+                  <Stack direction="row">
+                    <Radio value="light">亮</Radio>
+                    <Radio value="dark">暗</Radio>
+                  </Stack>
+                </RadioGroup>
+                <Checkbox
+                  isChecked={useSysTheme}
+                  onChange={e => setThemeSystem(e.target.checked)}
+                >
+                  跟随系统
+                </Checkbox>
+              </Stack>
             </Flex>
-            {/* <Flex
+            <Flex
               alignItems={'center'}
               justifyContent="space-between"
               minH="40px"
             >
-              卡片集
-              <Flex maxW={'300px'} flexWrap="wrap">
-                {[
-                  'Collection A',
-                  'Metrics',
-                  'xxxxxxxxxxxlc',
-                  'aksdflkajsdf SDKLfjlasd',
-                  'aksdflkajsdf SDKLfjlasd',
-                  ' SDKLfjlasd',
-                  'aksdflkajsdf SDKLfjlasd',
-                  ' SDKLfjlasd',
-                  'aksdflkajsdf',
-                  'SDKLfjlasd',
-                ].map((item) => (
-                  <Tag size={'sm'} margin="5px 5px" color={tagColor}>
-                    <TagLeftIcon boxSize="10px" as={AddIcon}></TagLeftIcon>
+              屏蔽内容
+              <Flex maxW={'300px'} flexWrap="wrap" justifyContent={'flex-end'}>
+                {collections.map(item => (
+                  <Tag size={'sm'} margin="5px 5px" color={tagColor} key={item}>
+                    <TagLeftIcon boxSize="10px" as={ViewIcon}></TagLeftIcon>
                     <TagLabel>{item}</TagLabel>
                   </Tag>
                 ))}
               </Flex>
-            </Flex> */}
+            </Flex>
             <Flex alignItems={'center'} justifyContent="space-between" h="40px">
               联系作者
               <Link href="mailto:sund.chn@gmail.com">sund.chn@gmail.com</Link>
