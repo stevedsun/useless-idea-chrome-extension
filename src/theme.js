@@ -5,7 +5,8 @@ const styles = {
   global: props => ({
     body: {
       bg: mode('#FEFBF3', '#2C3333')(props)
-    }
+    },
+    _focus: { boxShadow: 'none !important' }
   })
 }
 

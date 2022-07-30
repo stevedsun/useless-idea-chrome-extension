@@ -12,7 +12,7 @@
 
   "web_accessible_resources": [
     {
-      "resources": ["icon-128.png"],
+      "resources": ["icon-128.png", "cyber-pigeon.png"],
       "matches": []
     }
   ]

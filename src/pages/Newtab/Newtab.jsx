@@ -1,27 +1,33 @@
-import * as React from 'react';
+import * as React from 'react'
 import {
   Box,
   Flex,
   HStack,
   IconButton,
   useDisclosure,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import MainCard from '../../containers/MainCard/MainCard';
-import { SettingsIcon } from '@chakra-ui/icons';
-import Settings from '../../containers/Settings/Settings';
+  useColorModeValue
+} from '@chakra-ui/react'
+import MainCard from '../../containers/MainCard/MainCard'
+import { SettingsIcon } from '@chakra-ui/icons'
+import Settings from '../../containers/Settings/Settings'
 
 const Newtab = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const bg = useColorModeValue('color1', '_color1');
-  const btnBg = useColorModeValue('color2', '_color2');
+  const color_bg = useColorModeValue('color1', '_color1')
+  const color_icon = useColorModeValue('color2', '_color2')
 
   return (
-    <Flex flexDirection="column" h="100vh" minW="860px" minH="544px" bg={bg}>
+    <Flex
+      flexDirection="column"
+      h="100vh"
+      minW="860px"
+      minH="544px"
+      bg={color_bg}
+    >
       <Flex flexDirection="row" justifyContent="flex-end" h="20px">
         <IconButton
-          bg={btnBg}
+          bg={color_icon}
           borderRadius="50%"
           margin="20px 50px"
           aria-label="Settings"
@@ -36,7 +42,7 @@ const Newtab = () => {
         </Box>
       </HStack>
     </Flex>
-  );
-};
+  )
+}
 
-export default Newtab;
+export default Newtab
