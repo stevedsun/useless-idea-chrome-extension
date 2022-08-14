@@ -16,7 +16,7 @@ A new tab extension for Chrome browser, giving you new ideas.
 
 [Chrome Web Store | Chrome 网上应用商店](https://chrome.google.com/webstore/detail/useless-ideas/lieiofhdejclfpflofeooilpeaphlcgd)
 
-## Sponsorship | 支持
+## Acknowledgements | 鸣谢
 
 - [灵感买家俱乐部](https://club.q24.io/)
 - [Useless Ideas API](https://q24.io/useless)
